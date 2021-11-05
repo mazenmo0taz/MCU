@@ -13,6 +13,8 @@
 		BA278C3527342BE70099BB50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA278C3327342BE70099BB50 /* Main.storyboard */; };
 		BA278C3727342BE80099BB50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA278C3627342BE80099BB50 /* Assets.xcassets */; };
 		BA278C3A27342BE80099BB50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA278C3827342BE80099BB50 /* LaunchScreen.storyboard */; };
+		BA278C4427342C310099BB50 /* networkL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278C4327342C310099BB50 /* networkL.swift */; };
+		BA278C462734D8740099BB50 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278C452734D8740099BB50 /* ApiResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +26,8 @@
 		BA278C3627342BE80099BB50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA278C3927342BE80099BB50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA278C3B27342BE80099BB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BA278C4327342C310099BB50 /* networkL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkL.swift; sourceTree = "<group>"; };
+		BA278C452734D8740099BB50 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 		BA278C2C27342BE70099BB50 /* MCU */ = {
 			isa = PBXGroup;
 			children = (
+				BA278C4227342C140099BB50 /* network */,
 				BA278C2D27342BE70099BB50 /* AppDelegate.swift */,
 				BA278C2F27342BE70099BB50 /* SceneDelegate.swift */,
 				BA278C3127342BE70099BB50 /* ViewController.swift */,
@@ -65,6 +70,15 @@
 				BA278C3B27342BE80099BB50 /* Info.plist */,
 			);
 			path = MCU;
+			sourceTree = "<group>";
+		};
+		BA278C4227342C140099BB50 /* network */ = {
+			isa = PBXGroup;
+			children = (
+				BA278C4327342C310099BB50 /* networkL.swift */,
+				BA278C452734D8740099BB50 /* ApiResult.swift */,
+			);
+			path = network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -139,7 +153,9 @@
 			files = (
 				BA278C3227342BE70099BB50 /* ViewController.swift in Sources */,
 				BA278C2E27342BE70099BB50 /* AppDelegate.swift in Sources */,
+				BA278C462734D8740099BB50 /* ApiResult.swift in Sources */,
 				BA278C3027342BE70099BB50 /* SceneDelegate.swift in Sources */,
+				BA278C4427342C310099BB50 /* networkL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

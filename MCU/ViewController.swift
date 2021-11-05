@@ -11,8 +11,11 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
-    }
+        let m = MarvelData()
+        
+        m.performRequest(baseUrl:  "https://gateway.marvel.com:443/v1/public/characters?limit=100&offset=100")
+        }
+    
 
 
 }
