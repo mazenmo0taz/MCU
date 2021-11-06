@@ -7,17 +7,19 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A61E6BEA2736975F001808B2 /* Character.swift in Sources */ = {isa = PBXBuildFile; fileRef = A61E6BE92736975F001808B2 /* Character.swift */; };
 		BA278C2E27342BE70099BB50 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278C2D27342BE70099BB50 /* AppDelegate.swift */; };
 		BA278C3027342BE70099BB50 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278C2F27342BE70099BB50 /* SceneDelegate.swift */; };
 		BA278C3227342BE70099BB50 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278C3127342BE70099BB50 /* ViewController.swift */; };
 		BA278C3527342BE70099BB50 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA278C3327342BE70099BB50 /* Main.storyboard */; };
 		BA278C3727342BE80099BB50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA278C3627342BE80099BB50 /* Assets.xcassets */; };
 		BA278C3A27342BE80099BB50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA278C3827342BE80099BB50 /* LaunchScreen.storyboard */; };
-		BA278C4427342C310099BB50 /* networkL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278C4327342C310099BB50 /* networkL.swift */; };
+		BA278C4427342C310099BB50 /* NetworkL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278C4327342C310099BB50 /* NetworkL.swift */; };
 		BA278C462734D8740099BB50 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278C452734D8740099BB50 /* ApiResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A61E6BE92736975F001808B2 /* Character.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Character.swift; sourceTree = "<group>"; };
 		BA278C2A27342BE70099BB50 /* MCU.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MCU.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BA278C2D27342BE70099BB50 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BA278C2F27342BE70099BB50 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -26,7 +28,7 @@
 		BA278C3627342BE80099BB50 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BA278C3927342BE80099BB50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA278C3B27342BE80099BB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		BA278C4327342C310099BB50 /* networkL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = networkL.swift; sourceTree = "<group>"; };
+		BA278C4327342C310099BB50 /* NetworkL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkL.swift; sourceTree = "<group>"; };
 		BA278C452734D8740099BB50 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -41,6 +43,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A61E6BE827369753001808B2 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				A61E6BE92736975F001808B2 /* Character.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		BA278C2127342BE70099BB50 = {
 			isa = PBXGroup;
 			children = (
@@ -60,7 +70,8 @@
 		BA278C2C27342BE70099BB50 /* MCU */ = {
 			isa = PBXGroup;
 			children = (
-				BA278C4227342C140099BB50 /* network */,
+				A61E6BE827369753001808B2 /* Model */,
+				BA278C4227342C140099BB50 /* Network */,
 				BA278C2D27342BE70099BB50 /* AppDelegate.swift */,
 				BA278C2F27342BE70099BB50 /* SceneDelegate.swift */,
 				BA278C3127342BE70099BB50 /* ViewController.swift */,
@@ -72,13 +83,13 @@
 			path = MCU;
 			sourceTree = "<group>";
 		};
-		BA278C4227342C140099BB50 /* network */ = {
+		BA278C4227342C140099BB50 /* Network */ = {
 			isa = PBXGroup;
 			children = (
-				BA278C4327342C310099BB50 /* networkL.swift */,
+				BA278C4327342C310099BB50 /* NetworkL.swift */,
 				BA278C452734D8740099BB50 /* ApiResult.swift */,
 			);
-			path = network;
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -154,8 +165,9 @@
 				BA278C3227342BE70099BB50 /* ViewController.swift in Sources */,
 				BA278C2E27342BE70099BB50 /* AppDelegate.swift in Sources */,
 				BA278C462734D8740099BB50 /* ApiResult.swift in Sources */,
+				A61E6BEA2736975F001808B2 /* Character.swift in Sources */,
 				BA278C3027342BE70099BB50 /* SceneDelegate.swift in Sources */,
-				BA278C4427342C310099BB50 /* networkL.swift in Sources */,
+				BA278C4427342C310099BB50 /* NetworkL.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
