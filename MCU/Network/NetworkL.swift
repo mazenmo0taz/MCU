@@ -13,41 +13,13 @@ enum HTTPMethod: String {
     case post = "POST"
 }
 
+
 class MarvelData {
   
     let baseURL = "https://gateway.marvel.com:443"
     let pubKey = "8e16e1c2eba204502d2a8fb140122b39"
     let privKey = "29bdd211664ed96f3da9b75ad170f686cc3523ba"
-    
-    //making hash paramter
-//     func performRequest(baseUrl:String){
-//        let ts = String(Date().timeIntervalSince1970)
-//        let hash = MD5(timeStamp:ts, privKey: privKey, publKey: pubKey)
-//        let url = "\(baseUrl)&ts=\(ts)&apikey=\(pubKey)&hash=\(hash)"
-//        print(url)
-//        let session = URLSession(configuration: .default)
-//        let task = session.dataTask(with: URL(string: url)!) {( data, _, error ) in
-//            if let e = error {
-//                print(e.localizedDescription)
-//            }
-//            if let d = data{
-//                let decoder = JSONDecoder()
-//                do{
-//                    let chars = try decoder.decode(Result.self, from: d)
-//                    for i in 1...20{
-//                        print("character name = \(chars.data.results[i].name)   ,   character id = \(chars.data.results[i].id)")
-//                    }
-//                }catch{
-//                    print(error.localizedDescription)
-//                }
-//            }else{
-//                print("no data found")
-//            }
-//        }
-//        task.resume()
-//     }
-    
-    func request(with url: String,
+    func request(with path: String,
                  parameters: [String: Any]? = nil,
                  method: HTTPMethod = .get,
                  headers: [String: Any]? = nil,
@@ -58,14 +30,31 @@ class MarvelData {
         let generatedHash = generateHashData(timeStamp)
         let session = URLSession(configuration: .default)
         
-        let url = "\(baseURL)\(url)&ts=\(timeStamp)&apikey=\(pubKey)&hash=\(generatedHash)"
-        let task = session.dataTask(with: URL(string: url)!) { (data, response, error) in
-            
+        let url = "\(baseURL)\(path)&ts=\(timeStamp)&apikey=\(pubKey)&hash=\(generatedHash)"
+        var urlRequest = URLRequest(url: URL(string:url)!)
+        urlRequest.addValue("application/json", forHTTPHeaderField: "Content-Type")
+        urlRequest.httpMethod = method.rawValue
+        if var params = parameters{
+            params["ts"] = timeStamp
+            params["apikey"] = pubKey
+            params["hash"] = generatedHash
+            switch method{
+            case .get:
+                var urlComponents = URLComponents(string: url)
+                urlComponents?.queryItems = params.map{URLQueryItem(name: $0, value: "\($1)")}
+                urlRequest.url = urlComponents?.url
+            case .post:
+                let bodyData = try? JSONSerialization.data(withJSONObject: params, options: [])
+                urlRequest.httpBody = bodyData
+            }
+        }
+        let task = session.dataTask(with: urlRequest) { (data, response, error) in
             if let endpointError = error {
                 failure(endpointError)
             }
             if let responseData = data {
                 success(responseData)
+                
             }
         }
         task.resume()
