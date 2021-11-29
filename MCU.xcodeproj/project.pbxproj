@@ -15,7 +15,6 @@
 		BA278C3727342BE80099BB50 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BA278C3627342BE80099BB50 /* Assets.xcassets */; };
 		BA278C3A27342BE80099BB50 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BA278C3827342BE80099BB50 /* LaunchScreen.storyboard */; };
 		BA278C4427342C310099BB50 /* NetworkL.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278C4327342C310099BB50 /* NetworkL.swift */; };
-		BA278C462734D8740099BB50 /* ApiResult.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA278C452734D8740099BB50 /* ApiResult.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -29,7 +28,6 @@
 		BA278C3927342BE80099BB50 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BA278C3B27342BE80099BB50 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BA278C4327342C310099BB50 /* NetworkL.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkL.swift; sourceTree = "<group>"; };
-		BA278C452734D8740099BB50 /* ApiResult.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApiResult.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -87,7 +85,6 @@
 			isa = PBXGroup;
 			children = (
 				BA278C4327342C310099BB50 /* NetworkL.swift */,
-				BA278C452734D8740099BB50 /* ApiResult.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -164,7 +161,6 @@
 			files = (
 				BA278C3227342BE70099BB50 /* ViewController.swift in Sources */,
 				BA278C2E27342BE70099BB50 /* AppDelegate.swift in Sources */,
-				BA278C462734D8740099BB50 /* ApiResult.swift in Sources */,
 				A61E6BEA2736975F001808B2 /* Character.swift in Sources */,
 				BA278C3027342BE70099BB50 /* SceneDelegate.swift in Sources */,
 				BA278C4427342C310099BB50 /* NetworkL.swift in Sources */,
