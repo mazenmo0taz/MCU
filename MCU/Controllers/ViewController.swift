@@ -27,6 +27,7 @@ class ViewController: UIViewController{
         }
     }
 }
+
 extension ViewController: UITableViewDataSource, UITableViewDelegate{
      func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if let chars = globalChars{
@@ -43,7 +44,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
         if charDesc != "" {
             cell.desc.text = charDesc
         }else{cell.desc.text =  "no description for this character"}
-        setCharImg(tableView: charsTableView, tableViewCell: cell,indexPath: indexPath.row)
+        setCharImg(tableView: charsTableView, tableViewCell: cell, indexPath: indexPath.row)
         return cell
     }
     
@@ -85,19 +86,31 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate{
                     charDetailVC.CharacterDetailsDesc.text = "this character doesn't have description"
                 }
                 charDetailVC.CharacterAvailableStories.text =  "\((self.globalChars?.data.results[indexPath.row].comics.available)!)"
-                charDetailVC.CharacterStroiesNames.text = comicsNames.joined(separator: "\n")
+                charDetailVC.CharacterStroiesNames.text = comicsNames.joined(separator: "\n\n")
             }
         }
     }
     func setCharImg(tableView : UITableView,tableViewCell:CellControllerTableViewCell,indexPath: Int){
         let imgUrlHttp = "\(globalChars?.data.results[indexPath].thumbnail.path ?? "no image path")/portrait_small.\(globalChars?.data.results[indexPath].thumbnail.extension ?? "no image extension")"
-        let imgURL = URL(string: "https\(imgUrlHttp.dropFirst(4))")  // replaces http with https and converts String into URL
-        if let safeUrl = imgURL{
-        let data = try! Data(contentsOf: safeUrl)
-            DispatchQueue.main.async {
-                tableViewCell.charImage?.image = UIImage(data: data)
-            }
+        if let imgURL = URL(string: "https\(imgUrlHttp.dropFirst(4))")// replaces http with https and converts String into URL
+        {
+            URLSession.shared.dataTask(with: imgURL) { data, response, error in
+                DispatchQueue.main.async {
+                    tableViewCell.charImage?.image = UIImage(systemName: "pencil")
+                }
+                print(imgURL , data ?? "002222",tableViewCell.charImage?.image?.size ?? "fu")
+            }.resume()
         }
-        print(imgURL ?? "url is nil")
     }
+//    func setCharImg(tableView : UITableView,tableViewCell:CellControllerTableViewCell,indexPath: Int){
+//        let imgUrlHttp = "\(globalChars?.data.results[indexPath].thumbnail.path ?? "no image path")/portrait_small.\(globalChars?.data.results[indexPath].thumbnail.extension ?? "no image extension")"
+//        let imgURL = URL(string: "https\(imgUrlHttp.dropFirst(4))") // replaces http with https and converts String into URL
+//        if let safeUrl = imgURL{
+//        let data = try! Data(contentsOf: safeUrl)
+//            DispatchQueue.main.async {
+//                tableViewCell.charImage?.image = UIImage(data: data)
+//            }
+//            print(imgURL ?? "url is nil" , data)
+//        }
+//    }
 }

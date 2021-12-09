@@ -7,7 +7,6 @@
 import UIKit
 
 class CellControllerTableViewCell: UITableViewCell {
-
     @IBOutlet weak var name: UILabel!
     
     @IBOutlet weak var charImage: UIImageView!
